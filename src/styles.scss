@@ -12,7 +12,7 @@
         @apply mx-auto border min-w-[320px] max-w-[1440px] flex flex-col min-h-screen text-sm bg-grey-900;
 
         & main {
-            @apply grow;
+            @apply grow flex justify-center items-center;
         }
     }
 
@@ -20,8 +20,52 @@
 
 @layer components {
     .card {
-        @apply max-w-[384px] bg-grey-800;
+        @apply max-w-[384px] w-full bg-grey-800 text-white p-6 rounded-xl flex flex-col gap-6 items-center
+        tablet:p-10 duration-300;
+        transition-property:padding;
+
+        & .avatar {
+            @apply w-[88px] aspect-square rounded-full;
+        }
+
+        & .name-location {
+            @apply flex flex-col gap-1 items-center;
+
+            & .name {
+                @apply text-preset-1;
+            }
+
+            & .location {
+                @apply text-preset-2-bold;
+                @apply text-green;
+            }
+        }
+
+        & .bio{
+            @apply text-preset-2;
+        }
+
+        & .btns{
+            @apply flex flex-col gap-4 w-full;
+            & .btn{
+                @apply p-3 bg-grey-700 text-preset-2-bold rounded-lg
+                hover:bg-green hover:text-grey-700
+                transition-colors
+                hover:duration-300 duration-1000;
+            }
+        }
+
     }
+
+
+    .attribution {
+        @apply text-center text-xs;
+    }
+
+    .attribution a {
+        @apply text-blue-400;
+    }
+
 }
 
 @layer utilities {
@@ -38,11 +82,5 @@
         @apply font-bold;
     }
 
-    .attribution {
-        @apply text-center text-xs;
-    }
 
-    .attribution a {
-        @apply text-blue-400;
-    }
 }
