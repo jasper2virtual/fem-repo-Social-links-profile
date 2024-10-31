@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Inter';
+        src: url('./Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    }
+
+    #app {
+        @apply mx-auto border min-w-[320px] max-w-[1440px] flex flex-col min-h-screen text-sm bg-grey-900;
+
+        & main {
+            @apply grow;
+        }
+    }
+
+}
+
+@layer components {
+    .card {
+        @apply max-w-[384px] bg-grey-800;
+    }
+}
+
+@layer utilities {
+    .text-preset-1 {
+        @apply font-semibold text-2xl leading-normal tracking-normal font-inter;
+    }
+
+    .text-preset-2 {
+        @apply font-normal text-sm leading-normal tracking-normal font-inter;
+    }
+
+    .text-preset-2-bold {
+        @extend .text-preset-2;
+        @apply font-bold;
+    }
+
+    .attribution {
+        @apply text-center text-xs;
+    }
+
+    .attribution a {
+        @apply text-blue-400;
+    }
+}
